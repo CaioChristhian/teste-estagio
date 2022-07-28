@@ -1,0 +1,12 @@
+CREATE DATABASE contacts;
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE IF NOT EXISTS mycontact (
+  id UUID NOT NULL UNIQUE DEFAULT uuid_generate_v4(),
+  name VARCHAR NOT NULL,
+  email VARCHAR UNIQUE NOT NULL,
+  phone VARCHAR NOT NULL,
+  date_birthday DATE NOT NULL,
+  image VARCHAR NOT NULL
+);
